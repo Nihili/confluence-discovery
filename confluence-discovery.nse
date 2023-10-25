@@ -3,7 +3,7 @@ local shortport = require "shortport"
 local stdnse = require "stdnse"
 
 description = [[
-Performs Atlassian Confluence discovery by checking for the existence of the X-Confluence-Request-Time http header in HTTP response.
+Performs Atlassian Confluence discovery by checking for the existence of the X-Confluence-Request-Time HTTP header in HTTP response.
 ]]
 
 ---
@@ -35,7 +35,7 @@ action = function(host, port)
 	end
 	
 	if(not (response.header['x-confluence-request-time'] == nil)) then
-		return(stdnse.format_output(true, path))
+		return(stdnse.format_output(true, "Confluence found at " .. host.targetname .. ":" .. port.number .. path))
 	end
 	
 	return stdnse.format_output(false, "No confluence header found.")
