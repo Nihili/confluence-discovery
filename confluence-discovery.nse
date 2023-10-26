@@ -10,8 +10,7 @@ Performs Atlassian Confluence discovery by checking for the existence of the X-C
 --@output
 --443/tcp open  https
 --| confluence-discovery:
---|   FOUND
---|_  X-Confluence-Request-Time header present.
+--|_  Confluence found at example.com:443/
 --
 --@args path The http path to use for the request. Default: <code>/</code>
 --
